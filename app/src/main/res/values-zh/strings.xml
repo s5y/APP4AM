@@ -5,13 +5,12 @@
     <string name="title_section1">新聞啄木鳥</string>
     <string name="action_search">搜尋</string>
     <string name="topic_list_cd_topic_banner">最熱門議題。</string>
-    <string name="todo_topic_list_item_title">議題標題</string>
+    <string name="todo_topic_list_item_title">議題標題最多放十個字</string>
     <string name="todo_topic_list_item_abstract_text">議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明議題簡單說明。</string>
     <string name="topic_list_item_keywork_seperator">，</string>
-    <string name="topic_list_item_keyword_1">關鍵字1</string>
-    <string name="topic_list_item_keyword_2">關鍵字2</string>
-    <string name="topic_list_item_keyword_3">關鍵字3</string>
+    <string name="topic_list_item_keyword">關鍵字</string>
     <string name="topic_list_item_cd_image">議題圖片。</string>
     <string name="topic_list_item_cd_pinned">置頂議題。</string>
     <string name="topic_list_item_cd_review">新聞評論狀態。</string>
+    <string name="title_section2">最近新聞</string>
 </resources>

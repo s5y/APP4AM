@@ -27,16 +27,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
-
 import com.app4am.app4am.test.Cheeses;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
 import java.util.List;
 
@@ -44,7 +38,7 @@ import java.util.List;
  * A sample which shows how to use {@link android.support.v4.widget.SwipeRefreshLayout} within a
  * {@link android.support.v4.app.ListFragment} to add the 'swipe-to-refresh' gesture to a
  * {@link android.widget.ListView}. This is provided through the provided re-usable
- * {@link SwipeRefreshListFragment} class.
+ * {@link com.app4am.app4am.SwipeRefreshListFragment} class.
  * <p/>
  * <p>To provide an accessible way to trigger the refresh, this app also provides a refresh
  * action item. This item should be displayed in the Action Bar's overflow item.
@@ -55,9 +49,9 @@ import java.util.List;
  * {@link android.support.v4.widget.SwipeRefreshLayout} through the options menu. This is meant to
  * showcase the use of color rather than being something that should be integrated into apps.
  */
-public class MainTopicListFragment extends SwipeRefreshListFragment {
+public class LatestNewsListFragment extends SwipeRefreshListFragment {
 
-    private static final String LOG_TAG = MainTopicListFragment.class.getSimpleName();
+    private static final String LOG_TAG = LatestNewsListFragment.class.getSimpleName();
 
     private static final int LIST_ITEM_COUNT = 20;
     /**
@@ -70,7 +64,6 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
      * off of your application's branding.
      */
     boolean checkedState = false;
-    private View mHeaderView = null;
 
 
     @Override
@@ -92,29 +85,8 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         // color resource ids
         setColorScheme(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
                 R.color.color_scheme_1_3, R.color.color_scheme_1_4);
-        // Set list view background color.
-        view.setBackgroundResource(R.color.color_topic_list_background);
 
-        // Attach topic banner. The banner is dynamically loaded from the server.
-        // TODO: Real image source url.
-        ListView listView = getListView();
-        listView.addHeaderView(mHeaderView);
-
-        ImageView imageViewTopicBanner = (ImageView) mHeaderView.findViewById(R.id.iv_topic_banner);
-        int cornerRadiusInPx = getResources().getDimensionPixelSize(R.dimen.topic_list_item_background_corner_radius);
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .displayer(new RoundedBitmapDisplayer(cornerRadiusInPx)) //rounded corner bitmap
-                .cacheInMemory(true)
-                .build();
-
-        ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("assets://todo_topic_banner_1.png", imageViewTopicBanner, options);
-
-        listView.setDivider(getResources().getDrawable(R.drawable.common_transparent_divider));
-        listView.setDividerHeight((int) getResources().getDimension(R.dimen.topic_list_divider_height));
-        listView.setBackgroundResource(android.R.color.transparent);
-        listView.setCacheColorHint(0);
-
+        getListView().setDividerHeight((int) getResources().getDimension(R.dimen.topic_list_divider_height));
 
         /**
          * Create an ArrayAdapter to contain the data for the ListView. Each item in the ListView
@@ -122,7 +94,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
          */
         ListAdapter adapter = new ArrayAdapter<String>(
                 getActivity(),
-                R.layout.topic_list_item,
+                R.layout.latest_news_list_item,
                 R.id.tv_topic_title,
                 Cheeses.randomList(LIST_ITEM_COUNT));
 
@@ -213,9 +185,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = super.onCreateView(inflater, container, savedInstanceState);
-        mHeaderView = inflater.inflate(R.layout.topic_list_header, null);
-        return view;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
     // END_INCLUDE (refresh_complete)
 

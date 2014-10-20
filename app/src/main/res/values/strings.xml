@@ -3,7 +3,7 @@
 
     <string name="app_name">News Debug</string>
     <string name="title_section1">News Debug</string>
-    <string name="title_section2">Section 2</string>
+    <string name="title_section2">Latest News</string>
     <string name="title_section3">Section 3</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -15,9 +15,7 @@
     <string name="topic_list_item_left_square_brackets" translatable="false">[</string>
     <string name="topic_list_item_right_square_brackets" translatable="false">]</string>
     <string name="topic_list_item_keywork_seperator">,</string>
-    <string name="topic_list_item_keyword_1">keyword1</string>
-    <string name="topic_list_item_keyword_2">keyword2</string>
-    <string name="topic_list_item_keyword_3">keyword3</string>
+    <string name="topic_list_item_keyword">keyword</string>
     <string name="topic_list_item_cd_image">Image of the topic.</string>
     <string name="topic_list_item_cd_review">Reviews status of the topic.</string>
     <string name="topic_list_item_cd_pinned">Pinned topic.</string>

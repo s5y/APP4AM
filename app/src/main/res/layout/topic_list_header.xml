@@ -3,13 +3,110 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <!-- TODO: Update the content of the topic banner dynamically. -->
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/topic_list_item_horizontal_margin"
+    android:paddingRight="@dimen/topic_list_item_horizontal_margin"
+    android:paddingTop="@dimen/topic_list_divider_height">
+    <!-- Update the content of the topic banner dynamically. -->
     <ImageView
         android:id="@+id/iv_topic_banner"
         android:layout_width="match_parent"
         android:layout_height="@dimen/topic_list_header_banner_image_height"
         android:scaleType="fitXY"
-        android:src="@drawable/todo_topic_banner_1"
         android:contentDescription="@string/topic_list_cd_topic_banner" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topic_list_item_height"
+        android:orientation="vertical"
+        android:id="@+id/rl_topic_list_header_item"
+        android:background="@drawable/topic_list_item_background">
+
+        <TextView
+            android:id="@+id/tv_topic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/topic_list_item_title_left"
+            android:layout_marginTop="@dimen/topic_list_item_title_top"
+            android:text="@string/todo_topic_list_item_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/topic_list_item_title_font_size" />
+
+        <ImageView
+            android:id="@+id/iv_review_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_topic_title"
+            android:layout_toEndOf="@+id/tv_topic_title"
+            android:layout_toRightOf="@+id/tv_topic_title"
+            android:contentDescription="@string/topic_list_item_cd_review"
+            android:src="@drawable/ic_topic_checked" />
+
+        <ImageView
+            android:id="@+id/iv_pinned_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_topic_title"
+            android:layout_toEndOf="@+id/iv_review_status"
+            android:layout_toRightOf="@+id/iv_review_status"
+            android:contentDescription="@string/topic_list_item_cd_pinned"
+            android:src="@drawable/ic_content_hot" />
+
+        <TextView
+            android:id="@+id/tv_topic_abstract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_topic_title"
+            android:layout_marginLeft="@dimen/topic_list_item_abstract_left"
+            android:lines="@integer/topic_list_item_abstract_lines"
+            android:text="@string/todo_topic_list_item_abstract_text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_topic_list_item_abstract"
+            android:textSize="@dimen/topic_list_item_abstract_font_size"
+            android:layout_marginBottom="@dimen/topic_list_item_abstract_bottom" />
+
+        <TextView
+            android:id="@+id/tv_topic_keyword_right_square_brackets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/topic_list_item_right_square_brackets"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_topic_list_keyword"
+            android:textSize="@dimen/topic_list_item_keyword_font_size"
+            android:layout_alignTop="@+id/tv_topic_title"
+            android:layout_alignRight="@+id/tv_topic_abstract"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/tv_topic_keyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_topic_keyword_right_square_brackets"
+            android:layout_toLeftOf="@+id/tv_topic_keyword_right_square_brackets"
+            android:layout_toStartOf="@+id/tv_topic_keyword_right_square_brackets"
+            android:text="@string/topic_list_item_keyword"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_topic_list_keyword"
+            android:textSize="@dimen/topic_list_item_keyword_font_size" />
+
+        <TextView
+            android:id="@+id/tv_topic_keyword_left_square_brackets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_topic_keyword"
+            android:layout_toLeftOf="@+id/tv_topic_keyword"
+            android:layout_toStartOf="@+id/tv_topic_keyword"
+            android:text="@string/topic_list_item_left_square_brackets"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_topic_list_keyword"
+            android:textSize="@dimen/topic_list_item_keyword_font_size" />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.app4am.app4am;
 
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
@@ -9,6 +10,10 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.Toast;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -23,10 +28,20 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+
+    private MainPagerAdapter mMainPagerAdapter;
+    private ViewPager mViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // ViewPager and its adapters use support library
+        // fragments, so use getSupportFragmentManager.
+        mMainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mMainPagerAdapter);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -40,11 +55,39 @@ public class MainActivity extends ActionBarActivity
         /**
          * Load the main news list.
          */
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        MainTopicListFragment fragment = new MainTopicListFragment();
-        transaction.replace(R.id.container, fragment);
-        transaction.commit();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        MainTopicListFragment fragment = new MainTopicListFragment();
+//        transaction.replace(R.id.container, fragment);
+//        transaction.commit();
 
+    }
+
+    // Since this is an object collection, use a FragmentStatePagerAdapter,
+    // and NOT a FragmentPagerAdapter.
+    public class MainPagerAdapter extends FragmentStatePagerAdapter {
+
+        private ArrayList<Fragment> mFragmentArrayList = new ArrayList<Fragment>();
+
+        public MainPagerAdapter(FragmentManager fm) {
+            super(fm);
+            mFragmentArrayList.add(new MainTopicListFragment());
+            mFragmentArrayList.add(new LatestNewsListFragment());
+        }
+
+        @Override
+        public Fragment getItem(int index) {
+            return mFragmentArrayList.get(index);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentArrayList.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "OBJECT " + (position + 1);
+        }
     }
 
     @Override
@@ -52,6 +95,8 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         // TODO: side menu function
         Toast.makeText(this, "Option: " + position + " selected.", Toast.LENGTH_SHORT).show();
+        if (mViewPager != null)
+            mViewPager.setCurrentItem(position, true);
     }
 
     public void onSectionAttached(int number) {
@@ -95,10 +140,7 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
 }

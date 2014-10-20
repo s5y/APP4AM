@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/topic_list_item_height"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/topic_list_item_horizontal_margin"
-    android:paddingRight="@dimen/topic_list_item_horizontal_margin">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/topic_list_item_background">
-
-        <TextView
+    <TextView
         android:id="@+id/tv_topic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,7 +52,7 @@
         android:src="@drawable/todo_topic_list_item_image_placeholder"
         android:layout_marginLeft="@dimen/topic_list_item_picture_margin_left" />
 
-        <TextView
+    <TextView
         android:id="@+id/tv_topic_abstract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,6 +105,4 @@
         android:textColor="@color/color_topic_list_keyword"
         android:textSize="@dimen/topic_list_item_keyword_font_size" />
 
-
 </RelativeLayout>
-</LinearLayout>
