@@ -3,14 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item
-        android:id="@+id/action_example"
-        android:title="@string/action_example"
-        app:showAsAction="withText|ifRoom"
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        app:showAsAction="always"
         android:icon="@drawable/ic_action_search" />
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_action_settings" />
+        android:id="@+id/action_catalog"
+        android:title="@string/action_catalog"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_catalog"
+        android:checkable="true" />
+
+    <!--<item-->
+    <!--android:id="@+id/action_settings"-->
+    <!--android:title="@string/action_settings"-->
+    <!--android:orderInCategory="100"-->
+    <!--app:showAsAction="never"-->
+    <!--android:icon="@drawable/ic_action_settings" />-->
+
 </menu>

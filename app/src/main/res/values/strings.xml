@@ -7,8 +7,20 @@
     <string name="title_section3">Section 3</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
+    <string name="action_search">Search</string>
     <string name="action_settings">Settings</string>
-    <string name="test_text">(zh)</string>
+    <string name="topic_list_cd_topic_banner">Hottest topic banner.</string>
+    <string name="todo_topic_list_item_title">Topic</string>
+    <string name="todo_topic_list_item_abstract_text">Simple description.</string>
+    <string name="topic_list_item_left_square_brackets" translatable="false">[</string>
+    <string name="topic_list_item_right_square_brackets" translatable="false">]</string>
+    <string name="topic_list_item_keywork_seperator">,</string>
+    <string name="topic_list_item_keyword_1">keyword1</string>
+    <string name="topic_list_item_keyword_2">keyword2</string>
+    <string name="topic_list_item_keyword_3">keyword3</string>
+    <string name="topic_list_item_cd_image">Image of the topic.</string>
+    <string name="topic_list_item_cd_review">Reviews status of the topic.</string>
+    <string name="topic_list_item_cd_pinned">Pinned topic.</string>
+    <string name="action_catalog">action catalog</string>
 
 </resources>
