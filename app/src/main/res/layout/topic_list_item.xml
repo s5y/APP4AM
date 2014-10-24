@@ -2,10 +2,10 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/topic_list_item_height"
-        android:orientation="vertical"
-        android:background="@drawable/list_item_background">
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/topic_list_item_height"
+                android:orientation="vertical"
+                android:background="@drawable/list_item_background">
 
     <TextView
         android:id="@+id/tv_topic_title"
@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/topic_list_item_title_top"
         android:text="@string/todo_topic_list_item_title"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/topic_list_item_title_font_size" />
+        android:textSize="@dimen/topic_list_item_title_font_size"/>
 
     <ImageView
         android:id="@+id/iv_topic_picture"
@@ -41,7 +41,7 @@
         android:layout_toEndOf="@+id/tv_topic_title"
         android:layout_toRightOf="@+id/tv_topic_title"
         android:contentDescription="@string/topic_list_item_cd_review"
-        android:src="@drawable/ic_topic_checked" />
+        android:src="@drawable/ic_topic_checked"/>
 
     <ImageView
         android:id="@+id/iv_pinned_state"
@@ -51,7 +51,7 @@
         android:layout_toEndOf="@+id/iv_review_status"
         android:layout_toRightOf="@+id/iv_review_status"
         android:contentDescription="@string/topic_list_item_cd_pinned"
-        android:src="@drawable/ic_content_hot" />
+        android:src="@drawable/ic_content_hot"/>
 
     <TextView
         android:id="@+id/tv_topic_abstract"
@@ -93,7 +93,7 @@
         android:text="@string/topic_list_item_keyword"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/color_topic_list_keyword"
-        android:textSize="@dimen/topic_list_item_keyword_font_size" />
+        android:textSize="@dimen/topic_list_item_keyword_font_size"/>
 
     <TextView
         android:id="@+id/tv_topic_keyword_left_square_brackets"
@@ -105,7 +105,14 @@
         android:text="@string/topic_list_item_left_square_brackets"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/color_topic_list_keyword"
-        android:textSize="@dimen/topic_list_item_keyword_font_size" />
+        android:textSize="@dimen/topic_list_item_keyword_font_size"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:visibility="invisible"/>
 
 
 </RelativeLayout>

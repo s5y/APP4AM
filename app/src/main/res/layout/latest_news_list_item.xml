@@ -51,7 +51,8 @@
         android:layout_marginRight="@dimen/latest_news_photo_right"
         android:layout_marginBottom="@dimen/latest_news_photo_bottom"
         android:layout_alignParentBottom="false"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/latest_news_cd_photo"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,4 +69,20 @@
         android:layout_toLeftOf="@+id/tv_latest_news_publish_time"
         android:layout_toStartOf="@+id/tv_latest_news_publish_time"
         android:layout_centerVertical="true"/>
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/opt_violation_tag_checked"
+        android:layout_alignBottom="@+id/tv_latest_news_favor_index"
+        android:layout_toStartOf="@+id/tv_latest_news_publish_time"
+        android:layout_alignRight="@+id/tv_latest_news_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:visibility="invisible"/>
+
 </RelativeLayout>

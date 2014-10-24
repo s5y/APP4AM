@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <corners android:radius="@dimen/violation_tag_background_round_corner_radius"/>
+    <solid android:color="@color/color_violation_tag_checked_background"/>
+
+
+</shape>

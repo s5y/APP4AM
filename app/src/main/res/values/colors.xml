@@ -33,6 +33,8 @@
 
     <!-- Common Parameters -->
     <color name="color_common_list_item_background_shadow">#1A000000</color>
+    <color name="color_common_list_item_selection_background">#EA982E</color>
+
 
     <!-- Part I: Topic List -->
 
@@ -59,5 +61,7 @@
     <color name="color_latest_news_publish_time_udn">#FF7F00</color>
     <color name="color_latest_news_publish_time_apple_daily">#E70014</color>
     <color name="color_latest_news_title">#000000</color>
-
+    <color name="color_violation_tag">#FFFFFF</color>
+    <color name="color_violation_tag_checked_background">#BD2929</color>
+    <color name="color_violation_tag_unchecked_background">#9A9A9A</color>
 </resources>

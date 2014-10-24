@@ -26,6 +26,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -90,11 +91,36 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         // Set list view background color.
         view.setBackgroundResource(R.color.color_common_list_background);
 
+        // List item divider and background color
         ListView listView = getListView();
         listView.setDivider(getResources().getDrawable(R.drawable.common_list_divider));
         listView.setDividerHeight((int) getResources().getDimension(R.dimen.common_list_divider_height));
         listView.setBackgroundResource(R.color.color_common_list_background);
         listView.setCacheColorHint(0);
+
+        // List selector
+        listView.setSelector(R.drawable.list_view_selector);
+        listView.setDrawSelectorOnTop(true);
+
+        // Event handler
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // TODO: Open topic information page (B01) ?!
+                Log.d(LOG_TAG, "on click");
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                // TODO: Open topic introduction page (B02) ?!
+                Log.d(LOG_TAG, "on long click");
+
+
+                return false;
+            }
+        });
 
         /**
          * Create an ArrayAdapter to contain the data for the ListView. Each item in the ListView
@@ -103,7 +129,7 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         ListAdapter adapter = new ArrayAdapter<String>(
                 getActivity(),
                 R.layout.latest_news_list_item,
-                R.id.tv_latest_news_title,
+                R.id.textView,
                 Cheeses.randomList(LIST_ITEM_COUNT));
 
         // Set the adapter between the ListView and its backing data.

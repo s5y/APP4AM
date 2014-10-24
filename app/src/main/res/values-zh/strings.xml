@@ -16,4 +16,6 @@
     <string name="latest_news_media_title">媒體名稱</string>
     <string name="latest_news_publish_time">2014年10月24日</string>
     <string name="latest_news_title">新聞標題新聞標題新聞標題新聞最多可放二十二字</string>
+    <string name="latest_news_cd_photo">新聞圖片</string>
+    <string name="violation_tag">標題不妥</string>
 </resources>

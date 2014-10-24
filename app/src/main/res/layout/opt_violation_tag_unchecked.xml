@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="@dimen/violation_tag_unchecked_width"
+              android:layout_height="@dimen/violation_tag_unchecked_height"
+              android:background="@drawable/violation_tag_unchecked_background"
+              android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/violation_tag"
+        android:id="@+id/tv_violation_tag_unchecked"
+        android:textSize="@dimen/violation_tag_font_size"
+        android:textColor="@color/color_violation_tag"
+        />
+
+</LinearLayout>

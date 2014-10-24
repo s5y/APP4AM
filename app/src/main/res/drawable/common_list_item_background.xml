@@ -5,8 +5,8 @@
     <corners android:radius="@dimen/topic_list_item_background_corner_radius"/>
     <solid android:color="@color/color_topic_list_item_background"/>
 
-    <padding
-        android:left="@dimen/topic_list_item_horizontal_margin"
-        android:right="@dimen/topic_list_item_horizontal_margin"/>
+    <!--<padding-->
+    <!--android:left="@dimen/topic_list_item_horizontal_margin"-->
+    <!--android:right="@dimen/topic_list_item_horizontal_margin"/>-->
 
 </shape>

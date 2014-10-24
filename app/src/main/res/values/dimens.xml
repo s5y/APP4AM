@@ -9,7 +9,7 @@
     <dimen name="common_list_item_horizontal_margin">5dp</dimen>
     <dimen name="common_list_item_background_shadow_margin">1dp</dimen>
     <dimen name="common_list_divider_height">3dp</dimen>
-
+    <dimen name="common_list_item_selection_stroke_width">2dp</dimen>
     <!-- Part I: Topic List -->
 
 
@@ -38,6 +38,7 @@
     <dimen name="topic_list_item_picture_margin">5dp</dimen>
     <dimen name="topic_list_item_picture_margin_right">5dp</dimen>
     <dimen name="topic_list_item_picture_margin_left">5dp</dimen>
+    <dimen name="topic_list_item_keyword_right_square_brackets_right">5dp</dimen>
     <!-- Topic list item abstract lines. -->
     <integer name="topic_list_item_abstract_lines">2</integer>
 
@@ -61,7 +62,15 @@
     <dimen name="latest_news_title_left">61dp</dimen>
     <dimen name="latest_news_title_top">13dp</dimen>
     <dimen name="latest_news_title_bottom">13dp</dimen>
-    <dimen name="topic_list_item_keyword_right_square_brackets_right">5dp</dimen>
+    <dimen name="violation_tag_checked_icon_width">12dp</dimen>
+    <dimen name="violation_tag_checked_icon_height">12dp</dimen>
+    <dimen name="violation_tag_font_size">10sp</dimen>
+    <dimen name="violation_tag_background_round_corner_radius">2dp</dimen>
+    <dimen name="violation_tag_checked_width">54dp</dimen>
+    <dimen name="violation_tag_checked_height">13dp</dimen>
+    <dimen name="violation_tag_checked_left">2dp</dimen>
+    <dimen name="violation_tag_unchecked_width">43dp</dimen>
+    <dimen name="violation_tag_unchecked_height">13dp</dimen>
 
 
 </resources>
