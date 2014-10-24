@@ -16,8 +16,11 @@
 
 package com.app4am.app4am;
 
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -91,7 +94,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
 
         // Change the colors displayed by the SwipeRefreshLayout by providing it with 4
         // color resource ids
-        setColorScheme(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
+        setColorSchemeResources(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
                 R.color.color_scheme_1_3, R.color.color_scheme_1_4);
         // Set list view background color.
         view.setBackgroundResource(R.color.color_common_list_background);
@@ -133,13 +136,11 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO: Open topic introduction page (B02).
-                Log.d(LOG_TAG, "on long click");
-                return false;
+                // Open topic introduction page (B02).
+                onOpenTopicIntroduction();
+                return true;
             }
         });
-
-
 
         /**
          * Create an ArrayAdapter to contain the data for the ListView. Each item in the ListView
@@ -172,6 +173,14 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
             }
         });
         // END_INCLUDE (setup_refreshlistener)
+    }
+
+    /**
+     * Switch to the topic introduction activity.
+     */
+    private void onOpenTopicIntroduction() {
+        Intent intent = new Intent(getActivity(), TopicIntroductionActivity.class);
+        startActivity(intent);
     }
     // END_INCLUDE (setup_views)
 

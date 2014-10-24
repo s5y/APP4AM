@@ -85,7 +85,7 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
 
         // Change the colors displayed by the SwipeRefreshLayout by providing it with 4
         // color resource ids
-        setColorScheme(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
+        setColorSchemeResources(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
                 R.color.color_scheme_1_3, R.color.color_scheme_1_4);
 
         // Set list view background color.

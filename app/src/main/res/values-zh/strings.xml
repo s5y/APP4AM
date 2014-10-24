@@ -18,4 +18,6 @@
     <string name="latest_news_title">新聞標題新聞標題新聞標題新聞最多可放二十二字</string>
     <string name="latest_news_cd_photo">新聞圖片</string>
     <string name="violation_tag">標題不妥</string>
+    <string name="topic_introduction_title">議題名稱</string>
+    <string name="title_activity_topic_introduction">議題介紹</string>
 </resources>

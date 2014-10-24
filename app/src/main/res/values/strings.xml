@@ -31,4 +31,8 @@
     <string name="latest_news_cd_photo">Photo of latest news</string>
     <string name="violation_tag">Improper title</string>
 
+    <!-- Part III: Topic Introduction -->
+    <string name="title_activity_topic_introduction">TopicIntroductionActivity</string>
+    <string name="topic_introduction_title">Topic Title</string>
+
 </resources>

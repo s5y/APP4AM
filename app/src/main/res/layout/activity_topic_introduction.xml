@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.app4am.app4am.TopicIntroductionActivity"
+                android:background="@android:color/transparent">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/topic_introduction_top_action_bar_space"
+        android:id="@+id/topic_introduction_container">
+    </FrameLayout>
+</RelativeLayout>

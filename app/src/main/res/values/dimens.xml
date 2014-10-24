@@ -72,5 +72,10 @@
     <dimen name="violation_tag_unchecked_width">43dp</dimen>
     <dimen name="violation_tag_unchecked_height">13dp</dimen>
 
+    <!-- Part III: Topic Introduction-->
+    <dimen name="topic_introduction_bt_close_width">36dp</dimen>
+    <dimen name="topic_introduction_bt_close_height">36dp</dimen>
+    <dimen name="topic_introduction_top_action_bar_space">48dp</dimen>
+
 
 </resources>
