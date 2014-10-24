@@ -96,7 +96,7 @@ public class SwipeRefreshListFragment extends ListFragment {
      * @see android.support.v4.widget.SwipeRefreshLayout#setColorScheme(int, int, int, int)
      */
     public void setColorScheme(int colorRes1, int colorRes2, int colorRes3, int colorRes4) {
-        mSwipeRefreshLayout.setColorScheme(colorRes1, colorRes2, colorRes3, colorRes4);
+        mSwipeRefreshLayout.setColorSchemeResources(colorRes1, colorRes2, colorRes3, colorRes4);
     }
 
     /**

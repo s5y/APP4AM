@@ -24,7 +24,7 @@ import java.util.Random;
  * Dummy data.
  */
 public class Cheeses {
-    static final String[] CHEESES = {
+    private static final String[] CHEESES = {
             "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
             "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale",
             "Aisy Cendre", "Allgauer Emmentaler", "Alverca", "Ambert", "American Cheese",
@@ -159,8 +159,8 @@ public class Cheeses {
 
     public static ArrayList<String> asList() {
         ArrayList<String> items = new ArrayList<String>();
-        for (int i = 0, z = CHEESES.length; i < z; i++) {
-            items.add(CHEESES[i]);
+        for (String CHEESE : CHEESES) {
+            items.add(CHEESE);
         }
         return items;
     }

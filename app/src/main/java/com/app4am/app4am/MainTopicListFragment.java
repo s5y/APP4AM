@@ -69,7 +69,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
      * it just to demonstrate the use of color. Instead you should choose a color scheme based
      * off of your application's branding.
      */
-    boolean checkedState = false;
+    private boolean checkedState = false;
     private View mHeaderView = null;
 
 
@@ -93,7 +93,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         setColorScheme(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
                 R.color.color_scheme_1_3, R.color.color_scheme_1_4);
         // Set list view background color.
-        view.setBackgroundResource(R.color.color_topic_list_background);
+        view.setBackgroundResource(R.color.color_common_list_background);
 
         // Attach topic banner. The banner is dynamically loaded from the server.
         // TODO: Real image source url.
@@ -110,9 +110,9 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("assets://todo_topic_banner_1.png", imageViewTopicBanner, options);
 
-        listView.setDivider(getResources().getDrawable(R.drawable.common_transparent_divider));
-        listView.setDividerHeight((int) getResources().getDimension(R.dimen.topic_list_divider_height));
-        listView.setBackgroundResource(android.R.color.transparent);
+        listView.setDivider(getResources().getDrawable(R.drawable.common_list_divider));
+        listView.setDividerHeight((int) getResources().getDimension(R.dimen.common_list_divider_height));
+        listView.setBackgroundResource(R.color.color_common_list_background);
         listView.setCacheColorHint(0);
 
 
@@ -201,10 +201,14 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         Log.i(LOG_TAG, "onRefreshComplete");
 
         // Remove all items from the ListAdapter, and then replace them with the new items
-        ArrayAdapter<String> adapter = (ArrayAdapter<String>) getListAdapter();
-        adapter.clear();
-        for (String cheese : result) {
-            adapter.add(cheese);
+        try {
+            ArrayAdapter<String> adapter = (ArrayAdapter<String>) getListAdapter();
+            adapter.clear();
+            for (String cheese : result) {
+                adapter.add(cheese);
+            }
+        } catch (ClassCastException e) {
+            Log.e(LOG_TAG, e.toString());
         }
 
         // Stop the refreshing indicator

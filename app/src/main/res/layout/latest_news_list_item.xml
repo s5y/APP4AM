@@ -1,108 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/topic_list_item_height"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/latest_news_list_item_height"
+                android:orientation="vertical"
+                android:background="@drawable/list_item_background">
 
     <TextView
-        android:id="@+id/tv_topic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/latest_news_favor_index"
+        android:id="@+id/tv_latest_news_favor_index"
+        android:textColor="@color/color_latest_news_favor_index_hot"
+        android:textSize="@dimen/latest_news_favor_index_font_size"
+        android:layout_marginLeft="@dimen/latest_news_favor_index_left"
+        android:layout_marginBottom="@dimen/latest_news_favor_index_bottom"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latest_news_media_title"
+        android:id="@+id/tv_latest_news_media_title"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/topic_list_item_title_left"
-        android:layout_marginTop="@dimen/topic_list_item_title_top"
-        android:text="@string/todo_topic_list_item_title"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/topic_list_item_title_font_size" />
-
-    <ImageView
-        android:id="@+id/iv_review_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_topic_title"
-        android:layout_toEndOf="@+id/tv_topic_title"
-        android:layout_toRightOf="@+id/tv_topic_title"
-        android:contentDescription="@string/topic_list_item_cd_review"
-        android:src="@drawable/ic_topic_checked" />
-
-    <ImageView
-        android:id="@+id/iv_pinned_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_topic_title"
-        android:layout_toEndOf="@+id/iv_review_status"
-        android:layout_toRightOf="@+id/iv_review_status"
-        android:contentDescription="@string/topic_list_item_cd_pinned"
-        android:src="@drawable/ic_content_hot" />
-
-    <ImageView
-        android:id="@+id/iv_topic_picture"
-        android:layout_width="@dimen/topic_list_item_image_width"
-        android:layout_height="@dimen/topic_list_item_image_height"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="@dimen/topic_list_item_picture_margin_right"
-        android:layout_marginTop="@dimen/topic_list_item_picture_margin"
-        android:background="@color/color_topic_list_item_picture_background"
-        android:contentDescription="@string/topic_list_item_cd_image"
-        android:src="@drawable/todo_topic_list_item_image_placeholder"
-        android:layout_marginLeft="@dimen/topic_list_item_picture_margin_left" />
+        android:layout_marginTop="@dimen/latest_news_media_title_top"
+        android:layout_marginRight="@dimen/latest_news_media_title_right"
+        android:textSize="@dimen/latest_news_media_title_font_size"
+        android:textColor="@color/color_latest_news_media_title_apple_daily"/>
 
     <TextView
-        android:id="@+id/tv_topic_abstract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/latest_news_publish_time"
+        android:id="@+id/tv_latest_news_publish_time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/latest_news_publish_time_font_size"
+        android:layout_marginRight="@dimen/latest_news_publish_time_right"
+        android:layout_marginBottom="@dimen/latest_news_publish_time_bottom"
+        android:textColor="@color/color_latest_news_publish_time_apple_daily"/>
+
+    <ImageView
+        android:layout_width="@dimen/latest_news_photo_height"
+        android:layout_height="@dimen/latest_news_photo_width"
+        android:id="@+id/iv_latest_news_photo"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_photo"
+        android:layout_marginRight="@dimen/latest_news_photo_right"
+        android:layout_marginBottom="@dimen/latest_news_photo_bottom"
+        android:layout_alignParentBottom="false"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latest_news_title"
+        android:id="@+id/tv_latest_news_title"
+        android:lines="@integer/latest_news_title_lines"
+        android:textSize="@dimen/latest_news_title_font_size"
+        android:textColor="@color/color_latest_news_title"
+        android:layout_marginLeft="@dimen/latest_news_title_left"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_topic_title"
-        android:layout_marginLeft="@dimen/topic_list_item_abstract_left"
-        android:layout_toLeftOf="@+id/iv_topic_picture"
-        android:layout_toStartOf="@+id/iv_topic_picture"
-        android:lines="@integer/topic_list_item_abstract_lines"
-        android:text="@string/todo_topic_list_item_abstract_text"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/color_topic_list_item_abstract"
-        android:textSize="@dimen/topic_list_item_abstract_font_size"
-        android:layout_marginBottom="@dimen/topic_list_item_abstract_bottom" />
-
-    <TextView
-        android:id="@+id/tv_topic_keyword_right_square_brackets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tv_topic_title"
-        android:layout_toLeftOf="@+id/iv_topic_picture"
-        android:layout_toStartOf="@+id/iv_topic_picture"
-        android:text="@string/topic_list_item_right_square_brackets"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/color_topic_list_keyword"
-        android:textSize="@dimen/topic_list_item_keyword_font_size" />
-
-    <TextView
-        android:id="@+id/tv_topic_keyword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_topic_keyword_right_square_brackets"
-        android:layout_toLeftOf="@+id/tv_topic_keyword_right_square_brackets"
-        android:layout_toStartOf="@+id/tv_topic_keyword_right_square_brackets"
-        android:text="@string/topic_list_item_keyword"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/color_topic_list_keyword"
-        android:textSize="@dimen/topic_list_item_keyword_font_size" />
-
-    <TextView
-        android:id="@+id/tv_topic_keyword_left_square_brackets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_topic_keyword"
-        android:layout_toLeftOf="@+id/tv_topic_keyword"
-        android:layout_toStartOf="@+id/tv_topic_keyword"
-        android:text="@string/topic_list_item_left_square_brackets"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/color_topic_list_keyword"
-        android:textSize="@dimen/topic_list_item_keyword_font_size" />
-
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false"
+        android:layout_toLeftOf="@+id/tv_latest_news_publish_time"
+        android:layout_toStartOf="@+id/tv_latest_news_publish_time"
+        android:layout_centerVertical="true"/>
 </RelativeLayout>

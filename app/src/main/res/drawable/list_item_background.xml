@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/common_list_item_background_shadow"
+        android:right="@dimen/common_list_item_horizontal_margin"
+        android:left="@dimen/common_list_item_horizontal_margin"/>
+    <item
+        android:drawable="@drawable/common_list_item_background"
+        android:bottom="@dimen/common_list_item_background_shadow_margin"/>
+</layer-list>

@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.app4am.app4am.test.Cheeses;
@@ -86,7 +87,14 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         setColorScheme(R.color.color_scheme_1_1, R.color.color_scheme_1_2,
                 R.color.color_scheme_1_3, R.color.color_scheme_1_4);
 
-        getListView().setDividerHeight((int) getResources().getDimension(R.dimen.topic_list_divider_height));
+        // Set list view background color.
+        view.setBackgroundResource(R.color.color_common_list_background);
+
+        ListView listView = getListView();
+        listView.setDivider(getResources().getDrawable(R.drawable.common_list_divider));
+        listView.setDividerHeight((int) getResources().getDimension(R.dimen.common_list_divider_height));
+        listView.setBackgroundResource(R.color.color_common_list_background);
+        listView.setCacheColorHint(0);
 
         /**
          * Create an ArrayAdapter to contain the data for the ListView. Each item in the ListView
@@ -95,7 +103,7 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         ListAdapter adapter = new ArrayAdapter<String>(
                 getActivity(),
                 R.layout.latest_news_list_item,
-                R.id.tv_topic_title,
+                R.id.tv_latest_news_title,
                 Cheeses.randomList(LIST_ITEM_COUNT));
 
         // Set the adapter between the ListView and its backing data.
@@ -173,10 +181,14 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         Log.i(LOG_TAG, "onRefreshComplete");
 
         // Remove all items from the ListAdapter, and then replace them with the new items
-        ArrayAdapter<String> adapter = (ArrayAdapter<String>) getListAdapter();
-        adapter.clear();
-        for (String cheese : result) {
-            adapter.add(cheese);
+        try {
+            ArrayAdapter<String> adapter = (ArrayAdapter<String>) getListAdapter();
+            adapter.clear();
+            for (String cheese : result) {
+                adapter.add(cheese);
+            }
+        } catch (ClassCastException e) {
+            Log.e(LOG_TAG, e.toString());
         }
 
         // Stop the refreshing indicator

@@ -31,11 +31,33 @@
     <color name="color_scheme_1_4">#FF4444</color>
 
 
+    <!-- Common Parameters -->
+    <color name="color_common_list_item_background_shadow">#1A000000</color>
+
+    <!-- Part I: Topic List -->
+
     <!-- Color of the topic list item. -->
     <color name="color_topic_list_item_abstract">#9B9B9B</color>
     <color name="color_topic_list_keyword">#006CFF</color>
     <color name="color_topic_list_item_background">#FFFFFF</color>
     <color name="color_topic_list_item_picture_background">#D9D8D1</color>
-    <color name="color_topic_list_background">#D9D8D1</color>
+    <color name="color_common_list_background">#D9D8D1</color>
+
+
+    <!-- Part II: Latest News -->
+
+    <color name="color_latest_news_favor_index_color_n30">#0C4353</color>
+    <color name="color_latest_news_favor_index_p30">#999999</color>
+    <color name="color_latest_news_favor_index_p99">#EA982E</color>
+    <color name="color_latest_news_favor_index_hot">#BD2929</color>
+    <color name="color_latest_news_media_title_ltn">#E70014</color>
+    <color name="color_latest_news_media_title_china_times">#E70014</color>
+    <color name="color_latest_news_media_title_udn">#FF7F00</color>
+    <color name="color_latest_news_media_title_apple_daily">#E70014</color>
+    <color name="color_latest_news_publish_time_ltn">#E70014</color>
+    <color name="color_latest_news_publish_time_china_times">#E70014</color>
+    <color name="color_latest_news_publish_time_udn">#FF7F00</color>
+    <color name="color_latest_news_publish_time_apple_daily">#E70014</color>
+    <color name="color_latest_news_title">#000000</color>
 
 </resources>

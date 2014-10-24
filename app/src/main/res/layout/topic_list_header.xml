@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/topic_list_item_horizontal_margin"
     android:paddingRight="@dimen/topic_list_item_horizontal_margin"
-    android:paddingTop="@dimen/topic_list_divider_height">
+    android:paddingTop="@dimen/common_list_divider_height"
+    android:background="@drawable/list_item_background">
     <!-- Update the content of the topic banner dynamically. -->
     <ImageView
         android:id="@+id/iv_topic_banner"
@@ -20,7 +21,7 @@
         android:layout_height="@dimen/topic_list_item_height"
         android:orientation="vertical"
         android:id="@+id/rl_topic_list_header_item"
-        android:background="@drawable/topic_list_item_background">
+        >
 
         <TextView
             android:id="@+id/tv_topic_title"
@@ -61,14 +62,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/tv_topic_title"
             android:layout_marginLeft="@dimen/topic_list_item_abstract_left"
             android:lines="@integer/topic_list_item_abstract_lines"
             android:text="@string/todo_topic_list_item_abstract_text"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/color_topic_list_item_abstract"
             android:textSize="@dimen/topic_list_item_abstract_font_size"
-            android:layout_marginBottom="@dimen/topic_list_item_abstract_bottom" />
+            android:layout_marginBottom="@dimen/topic_list_item_abstract_bottom"
+            android:layout_below="@+id/tv_topic_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignRight="@+id/tv_topic_keyword_right_square_brackets"/>
 
         <TextView
             android:id="@+id/tv_topic_keyword_right_square_brackets"
@@ -79,10 +83,10 @@
             android:textColor="@color/color_topic_list_keyword"
             android:textSize="@dimen/topic_list_item_keyword_font_size"
             android:layout_alignTop="@+id/tv_topic_title"
-            android:layout_alignRight="@+id/tv_topic_abstract"
             android:layout_alignParentEnd="false"
             android:layout_alignParentLeft="false"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/topic_list_item_keyword_right_square_brackets_right"/>
 
         <TextView
             android:id="@+id/tv_topic_keyword"

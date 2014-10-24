@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity
     // and NOT a FragmentPagerAdapter.
     public class MainPagerAdapter extends FragmentStatePagerAdapter {
 
-        private ArrayList<Fragment> mFragmentArrayList = new ArrayList<Fragment>();
+        private final ArrayList<Fragment> mFragmentArrayList = new ArrayList<Fragment>();
 
         public MainPagerAdapter(FragmentManager fm) {
             super(fm);
