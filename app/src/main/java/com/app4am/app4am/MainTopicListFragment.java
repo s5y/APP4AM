@@ -16,6 +16,7 @@
 
 package com.app4am.app4am;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -35,7 +36,6 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 
 import com.app4am.app4am.test.Cheeses;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -75,12 +75,18 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
      */
     private boolean checkedState = false;
     private View mHeaderView = null;
+    private SwipeRefreshFragmentInterface mListener = null;
+    private int mPosition;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Bundle args = getArguments();
+        if (args != null) {
+            mPosition = args.getInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION);
+        }
+        Log.d(LOG_TAG, "onCreate " + this);
         // Notify the system to allow an options menu for this fragment.
         setHasOptionsMenu(true);
     }
@@ -91,6 +97,10 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if (savedInstanceState != null) {
+            mPosition = savedInstanceState.getInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION);
+        }
 
         // Change the colors displayed by the SwipeRefreshLayout by providing it with 4
         // color resource ids
@@ -173,6 +183,7 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
             }
         });
         // END_INCLUDE (setup_refreshlistener)
+
     }
 
     /**
@@ -183,6 +194,29 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         startActivity(intent);
     }
     // END_INCLUDE (setup_views)
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION, mPosition);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (SwipeRefreshFragmentInterface) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement SwipeRefreshFragmentInterface.");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -224,7 +258,8 @@ public class MainTopicListFragment extends SwipeRefreshListFragment {
         /**
          * Execute the background task, which uses {@link android.os.AsyncTask} to load the data.
          */
-        new DummyBackgroundTask().execute();
+//        new DummyBackgroundTask().execute();
+        mListener.onRefreshRequest(this);
     }
 
     /**

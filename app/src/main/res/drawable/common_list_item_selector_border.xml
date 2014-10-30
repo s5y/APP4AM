@@ -6,7 +6,8 @@
     <stroke
         android:width="@dimen/common_list_item_selection_stroke_width"
         android:color="@color/color_common_list_item_selection_background"/>
-
+    <solid
+        android:color="@android:color/transparent"/>
     <padding
         android:left="@dimen/common_list_item_horizontal_margin"
         android:right="@dimen/common_list_item_horizontal_margin"/>

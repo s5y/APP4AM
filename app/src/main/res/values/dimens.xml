@@ -10,6 +10,11 @@
     <dimen name="common_list_item_background_shadow_margin">1dp</dimen>
     <dimen name="common_list_divider_height">3dp</dimen>
     <dimen name="common_list_item_selection_stroke_width">2dp</dimen>
+
+
+    <dimen name="crawler_height">1dp</dimen>
+
+
     <!-- Part I: Topic List -->
 
 

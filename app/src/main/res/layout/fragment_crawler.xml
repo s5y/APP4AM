@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.app4am.app4am.CrawlerFragment">
+
+    <!-- The visibility of the browser component is marked invisible,
+         yet it works fine. -->
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        />
+</FrameLayout>

@@ -20,4 +20,10 @@
     <string name="violation_tag">標題不妥</string>
     <string name="topic_introduction_title">議題名稱</string>
     <string name="title_activity_topic_introduction">議題介紹</string>
+
+    <string name="version_update_hint1">新版本新聞啄木鳥 </string>
+    <string name="version_update_hint2"> 已釋出，要更新嗎？</string>
+    <string name="confirm_update">立即更新</string>
+    <string name="remind_me_later">下次再提醒</string>
+
 </resources>

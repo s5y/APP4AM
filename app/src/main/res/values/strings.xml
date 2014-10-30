@@ -10,6 +10,14 @@
     <string name="action_search">Search</string>
     <string name="action_settings">Settings</string>
     <string name="action_catalog" translatable="false">action catalog</string>
+    <string name="confirm_update">OK</string>
+    <string name="remind_me_later">Remind Later</string>
+    <string name="version_update_hint1">There is newer version </string>
+    <string name="version_update_hint2"> of this application available, click OK to upgrade now?</string>
+
+    <!-- Common -->
+    <string name="uri_front_page" translatable="false">http://ec2-54-92-66-45.ap-northeast-1.compute.amazonaws.com:9090</string>
+
 
     <!-- Part I: Topic List -->
 
@@ -34,5 +42,6 @@
     <!-- Part III: Topic Introduction -->
     <string name="title_activity_topic_introduction">TopicIntroductionActivity</string>
     <string name="topic_introduction_title">Topic Title</string>
+
 
 </resources>

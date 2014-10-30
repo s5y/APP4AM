@@ -10,8 +10,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  */
 public class App4amApplication extends Application {
 
-
+    /**
+     * Shared image loader configuration
+     */
     private ImageLoaderConfiguration mImageLoaderConfiguration;
+
 
     /**
      * Called when the application is starting, before any activity, service,
@@ -29,5 +32,8 @@ public class App4amApplication extends Application {
                 .build();
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.init(mImageLoaderConfiguration);
+
     }
+
+
 }

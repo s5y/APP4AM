@@ -1,17 +1,17 @@
 package com.app4am.app4am;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 
 public class TopicIntroductionActivity extends ActionBarActivity
         implements TopicIntroductionFragment.OnFragmentInteractionListener {
 
-    private static final String BUNDLE_KEY_TOPIC_INTRODUCTION_ACTIVITY_IS_FRESH_LOAD = "bundle_key_topic_introduction_fragment_isFreshLoad";
+    private static final String BUNDLE_KEY_TOPIC_INTRODUCTION_ACTIVITY_IS_FRESH_LOAD = "bundle_key_topic_introduction_activity_isFreshLoad";
     private static final String FRAG_TAG = "TOPIC_INTRODUCTION_FRAGMENT_TAG";
     private boolean isFreshLoad = true;
 

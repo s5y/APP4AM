@@ -16,6 +16,7 @@
 
 package com.app4am.app4am;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -66,11 +67,17 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
      * off of your application's branding.
      */
     boolean checkedState = false;
+    private SwipeRefreshFragmentInterface mListener = null;
+    private int mPosition;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle args = getArguments();
+        if (args != null) {
+            mPosition = args.getInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION);
+        }
 
         // Notify the system to allow an options menu for this fragment.
         setHasOptionsMenu(true);
@@ -82,6 +89,10 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if (savedInstanceState != null) {
+            mPosition = savedInstanceState.getInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION);
+        }
 
         // Change the colors displayed by the SwipeRefreshLayout by providing it with 4
         // color resource ids
@@ -153,8 +164,32 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
             }
         });
         // END_INCLUDE (setup_refreshlistener)
+
     }
     // END_INCLUDE (setup_views)
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SwipeRefreshFragmentInterface.FRAGMENT_POSITION, mPosition);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (SwipeRefreshFragmentInterface) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement SwipeRefreshFragmentInterface.");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -196,7 +231,8 @@ public class LatestNewsListFragment extends SwipeRefreshListFragment {
         /**
          * Execute the background task, which uses {@link android.os.AsyncTask} to load the data.
          */
-        new DummyBackgroundTask().execute();
+//        new DummyBackgroundTask().execute();
+        mListener.onRefreshRequest(this);
     }
 
     /**
